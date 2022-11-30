@@ -1,0 +1,30 @@
+.social-box {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+.social-networks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--icons-color);
+    background-color: var(--white);
+    border-radius: 50%;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+.social-icon {
+    fill: currentColor;
+}
