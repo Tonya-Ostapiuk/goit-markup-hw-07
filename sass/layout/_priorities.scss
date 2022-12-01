@@ -1,31 +1,35 @@
-.values { 
+.priorities { 
     display: flex;
     gap: 30px;
-}
-.values-item {
-    width: 270px;
-}
-.icons-values {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    background: #F5F4FA;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    
+    &__item {
+        width: 270px;
+    }
+        &__icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            background: #F5F4FA;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        
+        }
+    &__title{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        letter-spacing: 0.03em;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+    }
 }
 
-.values-title{
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-    margin-bottom: 10px;
-}
-.values .description {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-}
+
+
+
+
