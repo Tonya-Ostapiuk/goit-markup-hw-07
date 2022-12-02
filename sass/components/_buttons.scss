@@ -3,7 +3,7 @@
     border: 0;
     
 }
-.projects-button{
+.projects__button{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.63;
@@ -18,14 +18,15 @@
     height: 38px;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+        color: var(--white);
+        background-color: var(--accent-color);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
     
 }
-.projects-button:hover,
-.projects-button:focus {
-    color: var(--white);
-    background-color: var(--accent-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
+
 .hero__main-button {
     text-align: center;
 }
@@ -48,7 +49,7 @@
     }
 }
 
-.button-footer-form {
+.form-footer__button {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
@@ -69,11 +70,12 @@
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-footer-form:hover,
-.button-footer-form:focus {
+.form-footer__button:hover,
+.form-footer__button:focus {
     background-color: var(--accent-hero-color);
 }
-.button-close {
+
+.modal__button-close {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -88,10 +90,10 @@
     background: var(--white);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-   
+    
 }
-.button-close:focus .icon-close,
-.button-close:focus .icon-close {
+.modal__button-close:focus .modal__icon-close,
+.modal__button-close:focus .modal__icon-close {
     fill: var(--accent-color);
 }
 .modal-button{
@@ -109,13 +111,13 @@
     margin: 0 auto;
     
     color: var(--white);
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus,
+    &:hover {
+        background-color: var(--accent-hero-color);
+    }
 }
 
-.modal-button:focus,
-.modal-button:hover {
-    background-color: var(--accent-hero-color);
-}

@@ -1,3 +1,4 @@
+
 .logo {
     color: var(--accent-color);
 
@@ -9,16 +10,18 @@
     text-decoration: none;
                
 }
+
 .header-logo {
     margin-right: 93px;
     padding-top: 24px;
     padding-bottom: 25px;
-}
+} 
 
-.accent-logo {
+
+.logo--accent-footer {
+    color: var(--white);
+}
+.logo--accent-header{
     color: var(--black);
     
-}
-.footer {
-    color: var(--white);
 }

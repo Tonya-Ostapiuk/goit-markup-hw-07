@@ -8,16 +8,16 @@
 
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+    &.is-hidden .modal {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
 }
 
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0.5);
-}
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
 
 .modal {
     position: absolute;
@@ -34,21 +34,15 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &__icon-close {
+        fill: var(--black);
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+    }
     
 }
 
-.icon-close {
-    fill: var(--black);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form-box{
-    width: 448px;
-    display: flex;
-    flex-direction: column;
-   
-    margin-bottom: 20px;
-}
-.modal-title {
+.modal-form__action {
     color: var(--main-color-text);
 
     font-weight: 700;
@@ -60,6 +54,14 @@
     margin-bottom: 12px;
    
 }
+.form-box{
+    width: 448px;
+    display: flex;
+    flex-direction: column;
+   
+    margin-bottom: 20px;
+    
+}
 .modal-label {
     font-weight: 400;
     font-size: 12px;
@@ -69,6 +71,11 @@
     color: var(--secondary-text-color);
 
     margin-bottom: 4px;
+}
+
+.input-wrapper {
+    position: relative;
+    padding-top: 15px;
 }
 .modal-input {
     width: 100%;
@@ -81,69 +88,54 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-input:focus {
-    border: 1px solid #2196F3;
-    outline: none;
+    &:focus {
+        border: 1px solid #2196F3;
+        outline: none;
+    }
+    &:focus + .modal-input__icon {
+        fill: var(--accent-color);
+        
+    }
+    &__icon {
+        position: absolute;
+        display: block;
+        width: 18px;
+        height: 18px;
+        top: 13px;
+        left: 15px;
+    
+        fill: var(--main-color-text);
+    }
 }
 
-.modal-input:focus + .modal-icon {
-    fill: var(--accent-color);
-    
-}
+
+
 .modal-message {
     width: 448px;
     height: 120px;
     resize: none;
     padding: 12px 16px;
-
+    
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus {
+        border: 1px solid #2196F3;
+        outline: none;
+    }
 }
-.modal-message:focus {
-    border: 1px solid #2196F3;
-    outline: none;
-}
-.checkbox-input {
+.checkbox {
     margin-bottom: 30px;
+    &__input {
+        margin-bottom: 30px;
+    }
+    &__input:checked + label .contract-label__focus {
+        border-color: transparent;
+        background-color: var(--accent-color);
+       
+    }
 }
-.checkbox-input:checked + label .focus-checkbox {
-    border-color: transparent;
-    background-color: var(--accent-color);
-   
-}
-.checkbox-icon {
-    width: 15px;
-    height: 15px;
-     
-}
-
-
-.focus-checkbox {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 16px;
-    height: 15px;
-    
-        
-    border: 2px solid #212121;
-    border-radius: 4px;
-
-    margin-right: 7px;
-            
-}
-
-.input-wrapper {
-    position: relative;
-    padding-top: 15px;
-}
-.checkbox-box {
-    margin-bottom: 30px;
-}
-.checkbox-label {
+.contract-label {
     display: flex;
     justify-content: center;
     align-self: center;
@@ -152,17 +144,40 @@
     letter-spacing: 0.03em;
 
     color: var(--secondary-text-color);
+    &__focus {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 16px;
+        height: 15px;
+        
+            
+        border: 2px solid #212121;
+        border-radius: 4px;
+    
+        margin-right: 7px;
+                
+    }
+    &__icon {
+        width: 15px;
+        height: 15px;
+         
+    }
+    &__accent {
+        color: var(--accent-color);
+        
+    }
 }
-.modal-icon {
-    position: absolute;
-    display: block;
-    width: 18px;
-    height: 18px;
-    top: 13px;
-    left: 15px;
 
-    fill: var(--main-color-text);
-}
-.contract-accent {
-    color: var(--accent-color);
-}
+
+
+
+
+
+
+
+
+
+
+

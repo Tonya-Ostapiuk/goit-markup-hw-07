@@ -709,7 +709,7 @@ margin-bottom: 9px;
 
 /* Modal */
 
-/* .backdrop {
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -762,7 +762,7 @@ margin-bottom: 9px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
 } */
-/* .icon-close {
+.icon-close {
     fill: var(--black);
 }
 .form-box{
@@ -873,7 +873,7 @@ margin-bottom: 9px;
 }
 .contract-accent {
     color: var(--accent-color);
-}  */
+} 
 /* .modal-button{
     width: 200px;
     height: 50px;
@@ -897,4 +897,4 @@ margin-bottom: 9px;
 
 .modal-button:focus {
     background-color: var(--accent-hero-color);
-} */
+}
